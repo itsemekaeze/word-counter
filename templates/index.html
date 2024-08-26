@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .contain{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+</style>
+
+<h1 class="mt-4 mb-4 text-center">Input your text below</h1>
+
+<div class="row">
+    <div class="col mb-3">
+        <form method="POST" action="{% url 'counter' %}">
+            {% csrf_token %}
+            <div class="contain">
+                <textarea  name="text" rows="25" cols="70"></textarea><br>
+
+            <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}
